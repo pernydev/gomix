@@ -33,8 +33,9 @@ func main() {
 	bindings := map[uint8]string{
 		0: "dc-source",
 		1: "dc-output",
-		2: "fun-output",
+		2: "fun-toheadphones",
 		3: "fun-tocord",
+		4: "fun-tospeakers",
 	}
 
 	stop, err := midi.ListenTo(in, func(msg midi.Message, timestampms int32) {
