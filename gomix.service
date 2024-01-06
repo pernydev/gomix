@@ -9,3 +9,6 @@ Restart=always
 RestartSec=1
 User=mixer
 ExecStart=/usr/local/bin/gomix
+
+[Install]
+WantedBy=multi-user.target
