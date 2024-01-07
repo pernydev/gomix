@@ -1,6 +1,6 @@
 # gomix
 
-A simple MIDI to DBus mixer built Golang. It's hardcoded for my pipewire setup.
+A simple MIDI to Pipewire mixer built Golang. It's hardcoded for my pipewire setup.
 
 ## Installation
 
@@ -14,3 +14,6 @@ cp gomix/gomix.service $HOME/.local/share/systemd/user
 systemctl --user enable gomix.service
 systemctl --user start gomix.service
 ```
+
+![IMG_20240107_142516471](https://github.com/pernydev/gomix/assets/83672513/86448be0-9aea-4fd4-bcdc-d00ea6de2660)
+![image](https://github.com/pernydev/gomix/assets/83672513/f174fccd-27f8-4442-b941-a82ef69006ca)
