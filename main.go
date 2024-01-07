@@ -21,10 +21,11 @@ const (
 )
 
 type channel struct {
-	Sink string
-	Vol  float32
-	Prog progress.Model
-	Name string
+	Sink                     string
+	Vol                      float32
+	Prog                     progress.Model
+	Name                     string
+	GradientFrom, GradientTo string
 }
 
 var helpStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#626262")).Render
@@ -32,11 +33,11 @@ var helpStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#626262")).Render
 type tickMsg time.Time
 
 var channels = []channel{
-	0: {Sink: "dc_source", Vol: 0, Name: "Mic          "},
-	1: {Sink: "dc_output", Vol: 0, Name: "DC Output    "},
-	2: {Sink: "fun_to_headphones", Vol: 0, Name: "Headphones   "},
-	3: {Sink: "fun_to_dc", Vol: 0, Name: "Desktop to DC"},
-	4: {Sink: "fun_to_speakers", Vol: 0, Name: "Speakers     "},
+	0: {Sink: "dc_source", Vol: 0, Name: "Mic          ", GradientFrom: "#8749C3", GradientTo: "#5865F2"},
+	1: {Sink: "dc_output", Vol: 0, Name: "DC Output    ", GradientFrom: "#5865F2", GradientTo: "#5865F2"},
+	2: {Sink: "fun_to_headphones", Vol: 0, Name: "Headphones   ", GradientFrom: "#57F287", GradientTo: "#57F287"},
+	3: {Sink: "fun_to_dc", Vol: 0, Name: "Desktop to DC", GradientFrom: "#57F287", GradientTo: "#5865F2"},
+	4: {Sink: "fun_to_speakers", Vol: 0, Name: "Speakers     ", GradientFrom: "#57F287", GradientTo: "#57F287"},
 }
 
 type model struct {
@@ -114,7 +115,7 @@ func main() {
 	}
 
 	for ch, channel := range channels {
-		channel.Prog = progress.NewModel(progress.WithDefaultGradient())
+		channel.Prog = progress.NewModel(progress.WithGradient(channel.GradientFrom, channel.GradientTo))
 		channel.Prog.ShowPercentage = true
 		channels[ch] = channel
 	}
