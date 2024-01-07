@@ -1,13 +1,12 @@
 [Unit]
 Description=MIDI and PipeWire mixer - Gomix
-After=network.target
+After=
 StartLimitIntervalSec=0
 
 [Service]
 Type=simple
 Restart=always
 RestartSec=1
-User=mixer
 ExecStart=/usr/local/bin/gomix
 
 [Install]
