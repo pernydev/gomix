@@ -17,3 +17,4 @@ systemctl --user start gomix.service
 
 ![IMG_20240107_142516471](https://github.com/pernydev/gomix/assets/83672513/86448be0-9aea-4fd4-bcdc-d00ea6de2660)
 ![image](https://github.com/pernydev/gomix/assets/83672513/f174fccd-27f8-4442-b941-a82ef69006ca)
+![image](https://github.com/pernydev/gomix/assets/83672513/f89907bc-2814-4209-9c56-f4a46d72f8eb)
